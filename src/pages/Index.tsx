@@ -78,7 +78,12 @@ const GUIDE_ACCORDION = [
       "https://cdn.poehali.dev/projects/2b20b54a-2461-4c22-8cd3-a8c9bdc22afe/files/8bb62647-2913-4144-b4a0-4a71cfc12e79.jpg",
       "https://cdn.poehali.dev/projects/2b20b54a-2461-4c22-8cd3-a8c9bdc22afe/files/f40ad786-6f0b-4acf-8492-ed453905c790.jpg",
     ],
-    content: "Хаджох-1 «Одинокий Воин» — один из самых известных дольменов Адыгеи с круглым отверстием диаметром 40 см и легендой о воине-громовержце.\n\nБогатырская поляна близ Даховской — крупнейшая концентрация дольменов в регионе: более 400 объектов на одном плато.\n\nГузерипльский дольмен — высота 2.5 м, самый крупный известный объект Адыгеи, расположен на территории Кавказского заповедника.\n\nВолконский дольмен — уникальный полумонолит, вырубленный в скальном выходе у посёлка Волконка.\n\nДольмены урочища Жане — группа из трёх хорошо сохранившихся объектов у реки Жане, доступных для посещения.",
+    points: [
+      { name: "Волконский дольмен-монолит", desc: "Единственный монолитный дольмен Краснодарского края, высечен в скальном выходе. Лазаревский район." },
+      { name: "Гузерипльский дольмен", desc: "Высота 2.5 м, один из крупнейших в регионе. Расположен в Майкопском районе Адыгеи." },
+      { name: "Дольменное поле на р. Жане", desc: "Более 20 составных дольменов на небольшой площади. Геленджикский район." },
+      { name: "Богатырская поляна", desc: "Более 400 сооружений — крупнейшее дольменное поле Адыгеи, окрестности Хаджоха." },
+    ],
   },
   {
     title: "Исторический контекст",
@@ -87,7 +92,12 @@ const GUIDE_ACCORDION = [
       "https://cdn.poehali.dev/projects/2b20b54a-2461-4c22-8cd3-a8c9bdc22afe/files/6711891e-d4bc-4f3c-99ad-7ee3f568900a.jpg",
       "https://cdn.poehali.dev/projects/2b20b54a-2461-4c22-8cd3-a8c9bdc22afe/files/f40ad786-6f0b-4acf-8492-ed453905c790.jpg",
     ],
-    content: "Майкопская культура IV–II тысячелетия до н.э. — создатели дольменов Западного Кавказа. Они поддерживали торговые связи с Месопотамией, Ближним Востоком и ранними цивилизациями Анатолии.\n\nДольменные поля располагались вдоль древних торговых путей — предшественников Великого шёлкового пути. Это был перекрёсток культур и народов.\n\nНазначение дольменов по сей день остаётся предметом дискуссий: гробницы родовой знати, ритуальные святилища, астрономические обсерватории или маркеры территории — каждая версия подкреплена находками.\n\nНа территории от Таманского полуострова до Абхазии обнаружено более 2500 объектов — одна из крупнейших концентраций мегалитов в мире.",
+    points: [
+      { name: "Майкопская культура", desc: "III тысячелетие до н.э. — создатели большинства дольменов Западного Кавказа. Высокий уровень металлообработки и строительства." },
+      { name: "Связь с торговыми путями", desc: "Дольмены расположены вдоль древних перевальных троп, служивших прообразом Шёлкового пути." },
+      { name: "Майкопский курган", desc: "Эталонный памятник эпохи ранней бронзы, раскопан в 1897 г. Хранится в Эрмитаже." },
+      { name: "Программа охраны 1999 г.", desc: "Государственная программа сохранения мегалитов. Объекты включены в реестр культурного наследия РФ." },
+    ],
   },
 ];
 
@@ -425,20 +435,24 @@ export default function Index() {
                   </div>
                   {isOpen && (
                     <div style={{ marginTop: "24px" }}>
-                      {/* Two small preview images */}
-                      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "8px", marginBottom: "24px" }}>
+                      {/* Images row */}
+                      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: "8px", marginBottom: "28px" }}>
                         <img src={item.img} alt={item.title}
-                          style={{ width: "100%", aspectRatio: "16/9", objectFit: "cover", display: "block" }} />
-                        <div style={{ display: "grid", gridTemplateRows: "1fr 1fr", gap: "8px" }}>
-                          {item.imgs.map((src, j) => (
-                            <img key={j} src={src} alt=""
-                              style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
-                          ))}
-                        </div>
+                          style={{ width: "100%", aspectRatio: "4/3", objectFit: "cover", display: "block" }} />
+                        {item.imgs.map((src, j) => (
+                          <img key={j} src={src} alt=""
+                            style={{ width: "100%", aspectRatio: "4/3", objectFit: "cover", display: "block" }} />
+                        ))}
                       </div>
-                      {item.content.split("\n\n").map((para, pi) => (
-                        <p key={pi} style={{ color: C.whiteAlpha60, fontSize: "14px", lineHeight: 1.8, margin: "0 0 12px" }}>{para}</p>
-                      ))}
+                      {/* Points list */}
+                      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "2px" }}>
+                        {item.points.map((pt, pi) => (
+                          <div key={pi} style={{ padding: "18px 20px", background: "rgba(255,255,255,0.03)", borderLeft: `2px solid ${C.gold}` }}>
+                            <div style={{ fontFamily: "'Cormorant', serif", fontWeight: 700, fontSize: "16px", color: C.white, marginBottom: "6px" }}>{pt.name}</div>
+                            <div style={{ color: C.whiteAlpha60, fontSize: "13px", lineHeight: 1.65 }}>{pt.desc}</div>
+                          </div>
+                        ))}
+                      </div>
                     </div>
                   )}
                 </div>
