@@ -13,10 +13,34 @@ const STATS = [
 ];
 
 const DOLMEN_TYPES = [
-  { icon: "Square", name: "Плиточные", desc: "Наиболее распространённый тип на Западном Кавказе." },
-  { icon: "Circle", name: "Монолитные", desc: "Высечены целиком в скальном массиве. Редчайший вариант." },
-  { icon: "Layers", name: "Составные", desc: "Стены сложены из нескольких блоков. Сложная инженерия без цемента." },
-  { icon: "Droplets", name: "Корытообразные", desc: "Полость выдолблена в монолитном блоке. Верхняя плита — съёмная." },
+  {
+    icon: "Square",
+    name: "Плиточные",
+    desc: "Самый распространённый тип на Западном Кавказе.",
+    img: "https://cdn.poehali.dev/projects/2b20b54a-2461-4c22-8cd3-a8c9bdc22afe/files/55b89d56-47e4-4f54-a64e-5f488bca3749.jpg",
+    detail: "Собраны из 5 каменных плит: пол, крыша и три стены. Передняя плита (портал) имеет круглое или овальное входное отверстие диаметром 30–50 см, которое закрывалось каменной пробкой-втулкой. Плиты подогнаны друг к другу в пазы без использования раствора — это обеспечивало конструкции устойчивость на тысячелетия. Вес крышевой плиты нередко превышает 5 тонн. Встречаются по всему Западному Кавказу — от Тамани до Абхазии.",
+  },
+  {
+    icon: "Circle",
+    name: "Монолитные",
+    desc: "Высечены целиком в скальном массиве. Редчайший вариант.",
+    img: "https://cdn.poehali.dev/projects/2b20b54a-2461-4c22-8cd3-a8c9bdc22afe/files/e60e5f03-c1c8-4724-9970-14daf0a142e2.jpg",
+    detail: "Вырублены целиком в одном скальном выходе породы. Камера, стены и свод — всё это единый монолит, в котором древние мастера выдолбили внутреннее пространство. Такие дольмены — исключительная редкость: на весь Западный Кавказ насчитывается лишь несколько подобных объектов. Они свидетельствуют о высочайшем уровне камнеобработки Майкопской культуры.",
+  },
+  {
+    icon: "Layers",
+    name: "Составные",
+    desc: "Стены сложены из нескольких блоков. Сложная инженерия без цемента.",
+    img: "https://cdn.poehali.dev/projects/2b20b54a-2461-4c22-8cd3-a8c9bdc22afe/files/102b11fa-31cf-4028-85d3-1d71a77d8829.jpg",
+    detail: "Каждая стена составлена из двух и более каменных блоков, уложенных без связующего раствора. Такая конструкция требовала точной подгонки каждого элемента: горизонтальные швы пролегают строго по плоскостям, вертикальные — вразбежку. Это делало стены устойчивыми к сдвигу. Составные дольмены характерны для районов, где отсутствовали крупные каменные монолиты нужных размеров.",
+  },
+  {
+    icon: "Droplets",
+    name: "Корытообразные",
+    desc: "Полость выдолблена в монолитном блоке. Верхняя плита — съёмная.",
+    img: "https://cdn.poehali.dev/projects/2b20b54a-2461-4c22-8cd3-a8c9bdc22afe/files/f943e332-a47d-405c-bd51-95fb57e1a820.jpg",
+    detail: "Основание и стены высечены из единого каменного блока в форме корыта или ванны. Верхняя плита — отдельная и съёмная, что отличает этот тип от монолитного. Входное отверстие либо отсутствует, либо пробито сбоку. Внутренние поверхности нередко тщательно отшлифованы. Такие дольмены встречаются значительно реже плиточных и считаются более поздними по времени создания.",
+  },
 ];
 
 const ANATOMY_ITEMS = [
@@ -47,8 +71,24 @@ const ANATOMY_ITEMS = [
 ];
 
 const GUIDE_ACCORDION = [
-  { title: "Ключевые объекты", content: "Хаджох-1 «Одинокий Воин», Волконский дольмен, Гузерипльский дольмен высотой 2.5 м, дольмены урочища Жане, Богатырская поляна у Даховской — более 400 объектов." },
-  { title: "Исторический контекст", content: "Майкопская культура IV–II тыс. до н.э. Связь с Месопотамией, ранними ближневосточными цивилизациями. Дольменные поля вдоль Великого шёлкового пути — перекрёстка цивилизаций." },
+  {
+    title: "Ключевые объекты",
+    img: "https://cdn.poehali.dev/projects/2b20b54a-2461-4c22-8cd3-a8c9bdc22afe/files/3db1d8e7-c437-40d0-b1ff-b2669fb27ce8.jpg",
+    imgs: [
+      "https://cdn.poehali.dev/projects/2b20b54a-2461-4c22-8cd3-a8c9bdc22afe/files/8bb62647-2913-4144-b4a0-4a71cfc12e79.jpg",
+      "https://cdn.poehali.dev/projects/2b20b54a-2461-4c22-8cd3-a8c9bdc22afe/files/f40ad786-6f0b-4acf-8492-ed453905c790.jpg",
+    ],
+    content: "Хаджох-1 «Одинокий Воин» — один из самых известных дольменов Адыгеи с круглым отверстием диаметром 40 см и легендой о воине-громовержце.\n\nБогатырская поляна близ Даховской — крупнейшая концентрация дольменов в регионе: более 400 объектов на одном плато.\n\nГузерипльский дольмен — высота 2.5 м, самый крупный известный объект Адыгеи, расположен на территории Кавказского заповедника.\n\nВолконский дольмен — уникальный полумонолит, вырубленный в скальном выходе у посёлка Волконка.\n\nДольмены урочища Жане — группа из трёх хорошо сохранившихся объектов у реки Жане, доступных для посещения.",
+  },
+  {
+    title: "Исторический контекст",
+    img: "https://cdn.poehali.dev/projects/2b20b54a-2461-4c22-8cd3-a8c9bdc22afe/files/251d9bd8-0d3d-4a0d-8b14-12acd40b8775.jpg",
+    imgs: [
+      "https://cdn.poehali.dev/projects/2b20b54a-2461-4c22-8cd3-a8c9bdc22afe/files/6711891e-d4bc-4f3c-99ad-7ee3f568900a.jpg",
+      "https://cdn.poehali.dev/projects/2b20b54a-2461-4c22-8cd3-a8c9bdc22afe/files/f40ad786-6f0b-4acf-8492-ed453905c790.jpg",
+    ],
+    content: "Майкопская культура IV–II тысячелетия до н.э. — создатели дольменов Западного Кавказа. Они поддерживали торговые связи с Месопотамией, Ближним Востоком и ранними цивилизациями Анатолии.\n\nДольменные поля располагались вдоль древних торговых путей — предшественников Великого шёлкового пути. Это был перекрёсток культур и народов.\n\nНазначение дольменов по сей день остаётся предметом дискуссий: гробницы родовой знати, ритуальные святилища, астрономические обсерватории или маркеры территории — каждая версия подкреплена находками.\n\nНа территории от Таманского полуострова до Абхазии обнаружено более 2500 объектов — одна из крупнейших концентраций мегалитов в мире.",
+  },
 ];
 
 const ROUTES = [
@@ -137,6 +177,7 @@ const cardBase: React.CSSProperties = {
 export default function Index() {
   const [openAccordion, setOpenAccordion] = useState<number | null>(null);
   const [openAnatomy, setOpenAnatomy] = useState<number | null>(null);
+  const [hoveredType, setHoveredType] = useState<number | null>(null);
 
   return (
     <div style={{ fontFamily: "'Golos Text', sans-serif", background: C.bg, color: C.white, overflowX: "hidden" }}>
@@ -277,18 +318,52 @@ export default function Index() {
           </div>
           <h2 style={{ ...sectionTitle, textAlign: "center", marginBottom: "56px" }}>Типология дольменов</h2>
 
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: "2px", marginBottom: "80px" }}>
-            {DOLMEN_TYPES.map((t) => (
-              <div key={t.name} style={{ ...cardBase, cursor: "default" }}
-                onMouseEnter={e => (e.currentTarget.style.background = C.bgCardHover)}
-                onMouseLeave={e => (e.currentTarget.style.background = C.bgCard)}>
-                <div style={{ width: "44px", height: "44px", border: `1px solid ${C.border}`, display: "flex", alignItems: "center", justifyContent: "center", marginBottom: "20px" }}>
-                  <Icon name={t.icon} size={20} style={{ color: C.gold }} />
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: "2px", marginBottom: "80px", alignItems: "start" }}>
+            {DOLMEN_TYPES.map((t, i) => {
+              const isHovered = hoveredType === i;
+              return (
+                <div
+                  key={t.name}
+                  onMouseEnter={() => setHoveredType(i)}
+                  onMouseLeave={() => setHoveredType(null)}
+                  style={{
+                    ...cardBase,
+                    cursor: "default",
+                    background: isHovered ? C.bgCardHover : C.bgCard,
+                    borderColor: isHovered ? C.gold : C.border,
+                    gridColumn: isHovered ? "span 2" : "span 1",
+                    transition: "background 0.25s, border-color 0.25s",
+                    zIndex: isHovered ? 2 : 1,
+                    position: "relative",
+                  }}
+                >
+                  {isHovered ? (
+                    <div style={{ display: "flex", gap: "20px", alignItems: "flex-start" }}>
+                      <img
+                        src={t.img}
+                        alt={t.name}
+                        style={{ width: "180px", flexShrink: 0, aspectRatio: "3/4", objectFit: "cover", display: "block" }}
+                      />
+                      <div style={{ flex: 1 }}>
+                        <div style={{ width: "40px", height: "40px", border: `1px solid ${C.border}`, display: "flex", alignItems: "center", justifyContent: "center", marginBottom: "14px" }}>
+                          <Icon name={t.icon} size={18} style={{ color: C.gold }} />
+                        </div>
+                        <div style={{ fontFamily: "'Cormorant', serif", fontWeight: 700, fontSize: "22px", color: C.white, marginBottom: "10px" }}>{t.name}</div>
+                        <div style={{ color: C.whiteAlpha60, fontSize: "13px", lineHeight: 1.75 }}>{t.detail}</div>
+                      </div>
+                    </div>
+                  ) : (
+                    <>
+                      <div style={{ width: "44px", height: "44px", border: `1px solid ${C.border}`, display: "flex", alignItems: "center", justifyContent: "center", marginBottom: "20px" }}>
+                        <Icon name={t.icon} size={20} style={{ color: C.gold }} />
+                      </div>
+                      <div style={{ fontFamily: "'Cormorant', serif", fontWeight: 700, fontSize: "22px", color: C.white, marginBottom: "12px" }}>{t.name}</div>
+                      <div style={{ color: C.whiteAlpha60, fontSize: "14px", lineHeight: 1.65 }}>{t.desc}</div>
+                    </>
+                  )}
                 </div>
-                <div style={{ fontFamily: "'Cormorant', serif", fontWeight: 700, fontSize: "22px", color: C.white, marginBottom: "12px" }}>{t.name}</div>
-                <div style={{ color: C.whiteAlpha60, fontSize: "14px", lineHeight: 1.65 }}>{t.desc}</div>
-              </div>
-            ))}
+              );
+            })}
           </div>
 
           {/* Anatomy */}
@@ -333,24 +408,42 @@ export default function Index() {
           </div>
 
           {/* Accordion — Ключевые объекты / Исторический контекст */}
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "2px", marginTop: "2px" }}>
-            {GUIDE_ACCORDION.map((item, i) => (
-              <div key={i} style={{
-                ...cardBase, cursor: "pointer",
-                borderBottom: openAccordion === i ? `1px solid ${C.gold}` : `1px solid ${C.border}`,
-              }}
-                onMouseEnter={e => (e.currentTarget.style.background = C.bgCardHover)}
-                onMouseLeave={e => (e.currentTarget.style.background = C.bgCard)}
-                onClick={() => setOpenAccordion(openAccordion === i ? null : i)}>
-                <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-                  <span style={{ fontFamily: "'Cormorant', serif", fontWeight: 700, fontSize: "20px", color: C.white }}>{item.title}</span>
-                  <Icon name={openAccordion === i ? "ChevronUp" : "ChevronDown"} size={18} style={{ color: C.gold }} />
+          <div style={{ display: "flex", flexDirection: "column", gap: "2px", marginTop: "2px" }}>
+            {GUIDE_ACCORDION.map((item, i) => {
+              const isOpen = openAccordion === i;
+              return (
+                <div key={i} style={{
+                  ...cardBase, cursor: "pointer",
+                  borderColor: isOpen ? C.gold : C.border,
+                  background: isOpen ? C.bgCardHover : C.bgCard,
+                  transition: "background 0.2s, border-color 0.2s",
+                }}
+                  onClick={() => setOpenAccordion(isOpen ? null : i)}>
+                  <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+                    <span style={{ fontFamily: "'Cormorant', serif", fontWeight: 700, fontSize: "22px", color: C.white }}>{item.title}</span>
+                    <Icon name={isOpen ? "ChevronUp" : "ChevronDown"} size={18} style={{ color: C.gold }} />
+                  </div>
+                  {isOpen && (
+                    <div style={{ marginTop: "24px" }}>
+                      {/* Two small preview images */}
+                      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "8px", marginBottom: "24px" }}>
+                        <img src={item.img} alt={item.title}
+                          style={{ width: "100%", aspectRatio: "16/9", objectFit: "cover", display: "block" }} />
+                        <div style={{ display: "grid", gridTemplateRows: "1fr 1fr", gap: "8px" }}>
+                          {item.imgs.map((src, j) => (
+                            <img key={j} src={src} alt=""
+                              style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
+                          ))}
+                        </div>
+                      </div>
+                      {item.content.split("\n\n").map((para, pi) => (
+                        <p key={pi} style={{ color: C.whiteAlpha60, fontSize: "14px", lineHeight: 1.8, margin: "0 0 12px" }}>{para}</p>
+                      ))}
+                    </div>
+                  )}
                 </div>
-                {openAccordion === i && (
-                  <div style={{ marginTop: "16px", color: C.whiteAlpha60, fontSize: "14px", lineHeight: 1.75 }}>{item.content}</div>
-                )}
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
