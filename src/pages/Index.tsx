@@ -476,6 +476,85 @@ export default function Index() {
         </div>
       </section>
 
+      {/* ── БИБЛИОТЕКА ДОЛЬМЕНОВ ── */}
+      <section id="статьи" style={{ background: C.bg, padding: "100px 48px" }}>
+        <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
+          <div style={sectionLabel}>
+            <div style={labelLine} />
+            <span style={labelText}>Статьи</span>
+          </div>
+          <h2 style={{ ...sectionTitle, marginBottom: "12px" }}>Библиотека дольменов</h2>
+          <p style={{ color: C.whiteAlpha60, fontSize: "15px", lineHeight: 1.7, marginBottom: "48px", maxWidth: "560px" }}>
+            Здесь вы можете ознакомиться с интересными статьями об истории, исследованиях и загадках мегалитической культуры Западного Кавказа.
+          </p>
+
+          <div style={{ display: "flex", flexDirection: "column", gap: "2px" }}>
+            {[
+              {
+                num: "01",
+                author: "Дунаевская Е. А.",
+                title: "Исследование перспектив развития цивилизационного туризма в Республике Адыгея и Краснодарском крае",
+                href: "https://psv4.userapi.com/s/v1/d2/4Jq6XH3335vkYMbqUULPJth5XJ4w1smFJnfBy-XBlPKEDk8e9G9gE2waivJFHoYbmcddBkNUDgKzN2mu3l9TbRxJGTSs31WsVc2fikuEsaZn2V_BPcXEXtoa7S7x-mhdEfkltbJeScoD/elibrary_28845191_29093911.pdf?dl=1",
+              },
+              {
+                num: "02",
+                author: "Джанджугазова Е. А.",
+                title: "Дольмены Западного Кавказа: загадки, мифы, легенды",
+                href: "https://vk.com/doc832294119_697084350?hash=Z7SoVcUDz2RViOnRkEwH5CfZJxdybNzrrNX34yC5jUD&dl=wdhzzOemHc8H9XxYQPHlRy5c9xzqLTPkRVRfcz4nBdw&from_module=vkmsg_desktop",
+              },
+              {
+                num: "03",
+                author: "Дмитриев А. В.",
+                title: "Дольмены. Заблуждения исследователей и выход из тупика (логический анализ выводов)",
+                href: "https://vk.com/doc832294119_697084355?hash=st7pYQwImn9XJs2u1UzBn3AqZZd3b6zlul1J3X04AMc&dl=ZaJ3Yhh9RPL1Kju6DPZXjZyoYFv5V4Ga1Vh0ZCEU5ek&from_module=vkmsg_desktop",
+              },
+              {
+                num: "04",
+                author: "Трифонов В. А.",
+                title: "Происхождение керамического комплекса «дольменной» культуры эпохи бронзы",
+                href: "https://vk.com/doc832294119_697084357?hash=okvlRnV6gSTzQSDcTtn24trnXt6WKUPhcBIUewS3cgs&dl=9GEQi3klMEQeMvWMfvE4fZiWaYdBzkzDYsS79DnbdTL&from_module=vkmsg_desktop",
+              },
+            ].map((article) => (
+              <a
+                key={article.num}
+                href={article.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ textDecoration: "none" }}
+              >
+                <div style={{
+                  ...cardBase, display: "flex", alignItems: "center", gap: "28px",
+                  cursor: "pointer", transition: "background 0.2s, border-color 0.2s",
+                }}
+                  onMouseEnter={e => {
+                    (e.currentTarget as HTMLDivElement).style.background = C.bgCardHover;
+                    (e.currentTarget as HTMLDivElement).style.borderColor = C.gold;
+                  }}
+                  onMouseLeave={e => {
+                    (e.currentTarget as HTMLDivElement).style.background = C.bgCard;
+                    (e.currentTarget as HTMLDivElement).style.borderColor = C.border;
+                  }}
+                >
+                  <span style={{
+                    fontFamily: "'Cormorant', serif", fontSize: "36px", fontWeight: 700,
+                    color: "rgba(200,168,75,0.18)", lineHeight: 1, flexShrink: 0, width: "52px",
+                  }}>{article.num}</span>
+                  <div style={{ flex: 1 }}>
+                    <div style={{ color: C.gold, fontSize: "12px", letterSpacing: "0.1em", marginBottom: "6px", fontWeight: 500 }}>
+                      {article.author}
+                    </div>
+                    <div style={{ fontFamily: "'Cormorant', serif", fontWeight: 600, fontSize: "19px", color: C.white, lineHeight: 1.4 }}>
+                      {article.title}
+                    </div>
+                  </div>
+                  <Icon name="ExternalLink" size={18} style={{ color: C.gold, flexShrink: 0, opacity: 0.7 }} />
+                </div>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ── FOOTER ── */}
       <footer style={{ background: C.bgDark, borderTop: `1px solid ${C.borderLight}`, padding: "32px 48px" }}>
         <div style={{ maxWidth: "1200px", margin: "0 auto", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
